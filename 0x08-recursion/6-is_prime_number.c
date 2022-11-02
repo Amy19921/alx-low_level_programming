@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * helperfunction - returns 0 or 1
