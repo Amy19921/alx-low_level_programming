@@ -16,9 +16,9 @@ void _print(char *str, int l)
 	int i, j;
 
 	i = j = 0;
-
 	while (i < l)
-	{		if (str[i] != '0')
+	{
+		if (str[i] != '0')
 			j = 1;
 		if (j || i == l - 1)
 			putchar(str[i]);
@@ -65,6 +65,7 @@ char *mul(char n, char *num, int num_index, char *dest, int dest_index)
 	}
 	return (dest);
 }
+
 
 /**
  * check_for_digits - checks the arguments to ensure they are digits
@@ -118,6 +119,7 @@ int main(int argc, char *argv[])
 	int l1, l2, ln, ti, i;
 	char *a;
 	char *t;
+
 	char e[] = "Error\n";
 
 	if (argc != 3 || check_for_digits(argv))
@@ -138,9 +140,7 @@ int main(int argc, char *argv[])
 			putchar(e[ti]);
 		exit(98);
 	}
-
 	init(a, ln - 1);
-
 	for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
 	{
 		t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i);
@@ -148,13 +148,10 @@ int main(int argc, char *argv[])
 		{
 			for (ti = 0; e[ti]; ti++)
 				putchar(e[ti]);
-
 			free(a);
 			exit(98);
 		}
 	}
-
 	_print(a, ln - 1);
 	return (0);
-
 }
